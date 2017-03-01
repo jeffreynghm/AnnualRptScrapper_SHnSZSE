@@ -19,7 +19,7 @@ import urllib.request #download the file before proceeding
 import socket #catch gaddrinfo error
 
 
-     
+FIREFOXPROFILE = "C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default"     
 def scrapReports(link,stockcode,driver,res):
     #make sure the download function works
 
@@ -86,7 +86,7 @@ def calScore(f,res,filetxt,resScore):
     wordList = ['']
     FX_Score = 0
     
-    keywords = set(['外汇损益','掉期','海外市场','外汇波动','外汇市场汇率波动','外汇远期合约'])
+    keywords = set(['外汇'])
     #add these keywords into the dictionary
     for addword in keywords:
         jieba.add_word(addword, freq=None, tag=None)
@@ -136,7 +136,7 @@ def main():
     #about:support
     #under application basic: show folders
     #originalDLPath = 'C:\\Users\\Jeffrey Ng\\Downloads'
-    profile = webdriver.firefox.firefox_profile.FirefoxProfile("C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default")
+    profile = webdriver.firefox.firefox_profile.FirefoxProfile(FIREFOXPROFILE)
     profile.set_preference('browser.download.dir', pathname)
     driver = webdriver.Firefox(profile)
     driver.set_page_load_timeout(30)

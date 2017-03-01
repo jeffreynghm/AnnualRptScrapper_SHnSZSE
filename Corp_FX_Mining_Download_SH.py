@@ -20,6 +20,7 @@ import socket #catch gaddrinfo error
 
 import datetime # convert to date for comparsion
 
+FIREFOXPROFILE = "C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default"
 def mmYYYY_toVal(mmYYYY_CHI):
     mth_yr = mmYYYY_CHI.split(" ")
     for date_ele in mth_yr:
@@ -241,7 +242,7 @@ def calScore(f,res,filetxt,resScore):
     wordList = ['']
     FX_Score = 0
     
-    keywords = set(['外汇损益','掉期','海外市场','外汇波动','外汇市场汇率波动','外汇远期合约'])
+    keywords = set(['外汇'])
     #add these keywords into the dictionary
     for addword in keywords:
         jieba.add_word(addword, freq=None, tag=None)
@@ -289,7 +290,7 @@ def main():
     #use current profile
     #about:support
     #under application basic: show folders
-    profile = webdriver.firefox.firefox_profile.FirefoxProfile("C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default")
+    profile = webdriver.firefox.firefox_profile.FirefoxProfile(FIREFOXPROFILE)
     profile.set_preference('browser.download.dir', pathname)
     driver = webdriver.Firefox(profile)
     link = 'http://www.sse.com.cn/disclosure/listedinfo/regular/'

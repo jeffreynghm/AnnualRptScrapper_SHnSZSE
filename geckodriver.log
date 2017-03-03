@@ -1,0 +1,241 @@
+1488502842009	geckodriver	INFO	Listening on 127.0.0.1:61149
+1488502844047	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.8CElCsArYoUV
+1488502844050	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488502844054	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61155
+1488502847494	Marionette	INFO	Listening on port 61155
+1488502858689	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488502869846	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488502878813	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488502888239	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488502914615	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1488502914645	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 4836] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 4836] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1488502914648	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1488503067222	geckodriver	INFO	Listening on 127.0.0.1:61886
+1488503069110	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.dTvvrgJlbhHK
+1488503069113	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488503069117	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61892
+1488503073667	Marionette	INFO	Listening on port 61892
+1488503084385	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503137810	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503155831	geckodriver	INFO	Listening on 127.0.0.1:62127
+1488503158007	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.cmMAa80cZRJK
+1488503158041	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488503158046	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62133
+1488503161616	Marionette	INFO	Listening on port 62133
+1488503172830	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 6880] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6880] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503361241	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503364873	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503368485	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1488504094197	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.child1/highlighter31
+	INFO	Listening on port 63085
+1488503599711	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503604194	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503608427	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+1488503612144	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript error: javascript:desk_search_a('%E5%B9%B4%E6%8A%A5'), line 1: ReferenceError: desk_search_a is not defined
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x2E008E,name=PBrowser::Msg_UpdateNativeWindowHandle) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x2E007F,name=PBrowser::Msg_Destroy) Channel error: cannot send/recv
+
+*************************
+A coding exception was thrown in a Promise resolution callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this._containers is null
+Full stack: MarkupView.prototype.getContainer@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:486:5
+MarkupView.prototype._showContainerAsHovered@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:394:5
+MarkupView.prototype._onToolboxPickerHover/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:202:7
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+*************************
+*************************
+A coding exception was thrown in a Promise resolution callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this._containers is null
+Full stack: MarkupView.prototype.getContainer@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:486:5
+MarkupView.prototype._showContainerAsHovered@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:394:5
+MarkupView.prototype._onToolboxPickerHover/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:202:7
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+*************************
+*************************
+A coding exception was thrown in a Promise resolution callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this._containers is null
+Full stack: MarkupView.prototype.getContainer@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:486:5
+MarkupView.prototype._showContainerAsHovered@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:394:5
+MarkupView.prototype._onToolboxPickerHover/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:202:7
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+*************************
+1488504258756	geckodriver	INFO	Listening on 127.0.0.1:63822
+1488504260841	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.YL82a8mzS34e
+1488504260844	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488504260848	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63828
+1488504262653	Marionette	INFO	Listening on port 63828
+1488504288414	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 3160] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 3160] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1488504895646	geckodriver	INFO	Listening on 127.0.0.1:64124
+1488504897599	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.HMPajTLQGvLy
+1488504897602	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488504897606	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64130
+1488504899795	Marionette	INFO	Listening on port 64130
+1488504906292	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488504968546	Marionette	WARN	Using deprecated data structure for setting timeouts
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x2E008E,name=PBrowser::Msg_UpdateNativeWindowHandle) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x2E007F,name=PBrowser::Msg_Destroy) Channel error: cannot send/recv
+
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.child1/highlighter31
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript warning: http://code.jquery.com/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: , line 0: uncaught exception: undefined
+1488507106986	geckodriver	INFO	Listening on 127.0.0.1:64951
+1488507109041	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.qQPLKllBWobx
+1488507109044	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488507109048	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64957
+1488507109972	Marionette	INFO	Listening on port 64957
+1488507120307	Marionette	WARN	Using deprecated data structure for setting timeouts
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+eckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488507314682	geckodriver::marionette	INFO	Connecting to Marionette on localhost:65203
+1488507315630	Marionette	INFO	Listening on port 65203
+1488507320007	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488507441303	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488507470517	Marionette	WARN	Using deprecated data structure for setting timeouts
+*************************
+A coding exception was thrown in a Promise resolution callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.getContainer(...).editor is undefined
+Full stack: MarkupView.prototype.showNode/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:1142:30
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+*************************
+console.error: 
+  Message: TypeError: this.getContainer(...).editor is undefined
+  Stack:
+    MarkupView.prototype.showNode/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:1142:30
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+*************************
+A coding exception was thrown in a Promise resolution callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.getContainer(...).editor is undefined
+Full stack: MarkupView.prototype.showNode/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:1142:30
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+*************************
+console.error: 
+  Message: TypeError: this.getContainer(...).editor is undefined
+  Stack:
+    MarkupView.prototype.showNode/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/inspector/markup/markup.js:1142:30
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.child1/highlighter31
+[Child 5072] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5072] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+462	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488507658912	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488507798488	geckodriver	INFO	Listening on 127.0.0.1:49908
+1488507800633	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.XBpsMV310Ad8
+1488507800635	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488507800639	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49914
+1488507802224	Marionette	INFO	Listening on port 49914
+1488507810295	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488507828957	Marionette	WARN	Using deprecated data structure for setting timeouts
+[Child 5056] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5056] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+nnecting to Marionette on localhost:50370
+1488507977049	Marionette	INFO	Listening on port 50370
+1488507983736	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488507993129	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508005418	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508190748	geckodriver	INFO	Listening on 127.0.0.1:51014
+1488508192895	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.euED06OTVIcf
+1488508192897	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488508192901	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51020
+1488508194559	Marionette	INFO	Listening on port 51020
+1488508201839	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508210256	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508222155	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508243506	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508267826	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1488508267829	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1488508267832	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1488508272363	geckodriver	INFO	Listening on 127.0.0.1:51852
+1488508274514	mozprofile::profile	INFO	Using profile path C:\Users\JEFFRE~1\AppData\Local\Temp\rust_mozprofile.DDtbeje3Sq7K
+1488508274518	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1488508274522	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51858
+1488508276378	Marionette	INFO	Listening on port 51858
+1488508287274	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508297329	Marionette	WARN	Using deprecated data structure for setting timeouts
+1488508313236	Marionette	WARN	Using deprecated data structure for setting timeouts

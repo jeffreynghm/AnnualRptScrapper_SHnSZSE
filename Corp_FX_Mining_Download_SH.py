@@ -1,7 +1,6 @@
+##v2: allow different choice of browser - 20170303
 import subprocess
-import nltk
 import jieba
-#import jieba.analyse
 import os
 from collections import Counter
 from selenium import webdriver
@@ -11,6 +10,8 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 import re
 
 import pandas as pd
@@ -21,6 +22,42 @@ import socket #catch gaddrinfo error
 import datetime # convert to date for comparsion
 
 FIREFOXPROFILE = "C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default"
+myip = "192.168.3.1"
+
+def createDriver(browser):
+    
+    #port:8080
+    #java.exe -jar selenium-server-standalone-2.53.1.jar -host="192.168.3.17" -port="8080"
+    #myip = "http://127.0.0.1"
+
+    if browser =="IE-Server":
+        desired_capabilities = webdriver.DesiredCapabilities.INTERNETEXPLORER.copy()
+        driver = webdriver.Remote(myip+":4444/wd/hub", desired_capabilities)
+        #driver.get("http://www.google.com")
+    if browser == "Firefox-Server":
+        firefox_capabilities = webdriver.DesiredCapabilities.FIREFOX
+        firefox_capabilities['marionette'] = True
+        profile = webdriver.FirefoxProfile(profile_directory=FIREFOXPROFILE)
+        GECKOPATH = 'C:\\Jeffrey Ng\\BrowserDriver\\geckodriver.exe'
+        os.environ["PATH"]+="C:\\Jeffrey Ng\\BrowserDriver"
+        driver = webdriver.Remote(myip+":4444/wd/hub",firefox_capabilities)
+        #driver.get("http://www.google.com")
+    if browser == "Firefox-Standalone":
+        #profile = webdriver.firefox.firefox_profile.FirefoxProfile(FIREFOXPROFILE)
+        #pathname = os.path.dirname(os.path.abspath(__file__))
+        #profile.set_preference('browser.download.dir', pathname)
+        #os.environ["PATH"]+="C:\\Jeffrey Ng\\BrowserDriver"
+        #driver = webdriver.Firefox(profile)
+        firefox_capabilities = DesiredCapabilities.FIREFOX
+        firefox_capabilities['marionette'] = True
+        profile = webdriver.FirefoxProfile(profile_directory=FIREFOXPROFILE)
+        profile.set_preference('browser.download.dir', './PDF_SH/')
+        GECKOPATH = 'C:\\Jeffrey Ng\\BrowserDriver\\geckodriver.exe'
+        driver = webdriver.Firefox(firefox_profile=profile,capabilities=firefox_capabilities,executable_path=GECKOPATH)
+        #driver.get("http://www.google.com")
+    return driver
+
+
 def mmYYYY_toVal(mmYYYY_CHI):
     mth_yr = mmYYYY_CHI.split(" ")
     for date_ele in mth_yr:
@@ -74,44 +111,21 @@ def datePicker(datepickerElement,dateElement,driver,mmYYYY_CHI_Input):
     print('element.text : {0}'.format(element_text)+'datepickerElement')
     
     datepickerDays=datepickerElement.find_element_by_css_selector("div.datetimepicker-days")
-    #datepickersDays=datepickerElement.find_elements_by_xpath("//div[@class='datetimepicker-days']")
-    #for d in datepickersDays:
-    #    element_text = d.text
-    #    if element_text != '':
-    #        datepickerDays=d
-    #        break
-    #datepickerDays.click()
     element_text = datepickerDays.text
     print('element.text : {0}'.format(element_text)+'datepickerdays')
     todayButton = datepickerDays.find_element_by_css_selector("th.today")
     #debug: todayButton = datepickerElement.find_element_by_css_selector("th.today")
 
-    #i = 0
-    #for countTdyButton in datepickerDays.find_elements_by_css_selector("th.today"):
-    #    print(str(i+1)+' Tdy Button')
-
     element_text = todayButton.text
     print('element.text : {0}'.format(element_text)+'todayButton')
     
-    #todayButton = datepickerDays.find_elements_by_xpath("//*[contains(text(), '今天')]")
-
-    
-    #js = 'document.querySelectorAll("div")[0].style.display="block";'
-    #driver.execute_script(js)
-    #loc = todayButton.location
-    #for i in loc:
-    #    print(i)
-    
-    #print('Today butt ' + todayButton.location)
     if todayButton.is_displayed():
         print('Today butt is here')
         todayButton.click()
     else:
         print('Cannot get hold of Today button')
     dateElement.click()
-    
-    #datepickerDays=datepickerElement.find_element_by_xpath("//div[@class='datetimepicker-days']")
-    
+   
     mmYYYY_CHI_TXT = datepickerDays.find_element_by_class_name("switch").text
     mmYYYY_Compare_res = mmYYYY_Compare(mmYYYY_CHI_TXT, mmYYYY_CHI_Input)
 
@@ -155,8 +169,13 @@ def scrapReports_SHSE(link,stockcode,driver,res):
     element = driver.find_element_by_xpath("//input[@placeholder='证券代码或简称']")
     element.send_keys(stockcode)
 
-    try:
-        driver.find_element_by_link_text('年报').click()
+    try: #annual report selector not working ---to be fixed
+        driver.find_element_by_css_selector("button.ms-choice").click()
+        driver.find_element_by_css_selector("button.ms-choice").click()
+        elements = driver.find_elements_by_css_selector("div.ms-drop.ms-bottom")
+        elements = elements.find_elements_by_xpath('//label')
+        elements.find_element_by_link_text('年报').click()
+
     except Exception:
         print('nothing for '+stockcode)
 
@@ -164,13 +183,10 @@ def scrapReports_SHSE(link,stockcode,driver,res):
     dateElement.click()
     
     datepickerElement=driver.find_element_by_css_selector("div.datetimepicker.datetimepicker-dropdown-bottom-right.dropdown-menu")
-    datePicker(datepickerElement,dateElement,driver,"八月 2015")
+    datePicker(datepickerElement,dateElement,driver,"一月 2015")
     #1900 2016
-    
-    
-    
+
     dateElement2 = driver.find_element_by_id("end_date")
-    #dateElement2.send_keys(dateElement.text)
     print('key sent')
     dateElement2.click()
 
@@ -187,22 +203,13 @@ def scrapReports_SHSE(link,stockcode,driver,res):
             print("datepicker selected")
             datePicker(datepickerElement,dateElement2,driver,"十月 2016")
             break
-    #####  
-    #datepickerElement=driver.find_element_by_css_selector("div.datetimepicker.datetimepicker-dropdown-bottom-right.dropdown-menu + \
-    #                                                      div.datetimepicker.datetimepicker-dropdown-bottom-right.dropdown-menu")
-    
 
-    #element.send_keys("2016-09-22")
+    driver.find_element_by_css_selector("button#btnQuery.btn.btn-primary").click()
     
-    try:
-        driver.find_element_by_css_selector("button.btn.btn-primary.active").click()
-    except Exception:
-        driver.find_element_by_css_selector("button.btn.btn-primary").click()
-        
     #pattern = re.compile(r"(年度报告)+^(摘要)^(取消)", re.UNICODE)
     
     try:
-        elements = driver.find_elements_by_partial_link_text("年报")
+        elements = driver.find_elements_by_partial_link_text("年度报")
     except NoSuchElementException:
         print('nothing for '+stockcode)
 
@@ -214,26 +221,24 @@ def scrapReports_SHSE(link,stockcode,driver,res):
         #if match:
         docName = element.text
         newpage = element.get_attribute('href')
-        head, tail = os.path.split(newpage)
-        data={'stockcode':stockcode,'filename':tail,'fileDescription':docName,'KeywordSet':[''],'link':newpage}
-        res = res.append(pd.DataFrame(data),ignore_index=True)
-        
-        #element.click()
-        print(tail)
-        
-        try:
-            urllib.request.urlretrieve(newpage,".\\PDF_SH\\"+tail)
-        except Exception:
-            print("can't download "+newpage)
+        newpageUp = newpage.upper()
+        isPDF = re.search('.PDF',newpageUp)
+        if isPDF:
+            #check if it is a pdf...
             
+            head, tail = os.path.split(newpage)
+            data={'stockcode':stockcode,'filename':tail,'fileDescription':docName,'KeywordSet':[''],'link':newpage}
+            res = res.append(pd.DataFrame(data),ignore_index=True)
+            
+            #element.click()
+            print(tail)
+            
+            try:
+                urllib.request.urlretrieve('http://www.sse.com.cn/'+newpage,".\\PDF_SH\\"+tail)
+            except Exception:
+                print("can't download "+newpage)
+                
     return res
-#def renameFiles(SAVE_TO_DIRECTORY):
-#    os.chdir(SAVE_TO_DIRECTORY)
- #   files = filter(os.path.isfile, os.listdir(SAVE_TO_DIRECTORY))
-  #  files = [os.path.join(SAVE_TO_DIRECTORY, f) for f in files] # add path to each file
-   # files.sort(key=lambda x: os.path.getmtime(x))
-    #newest_file = files[-1]
-    #os.rename(newest_file, docName+".pdf")
 
 def calScore(f,res,filetxt,resScore):
     #v1
@@ -242,7 +247,7 @@ def calScore(f,res,filetxt,resScore):
     wordList = ['']
     FX_Score = 0
     
-    keywords = set(['外汇'])
+    keywords = set(['外汇损益','掉期','海外市场','外汇波动','外汇市场汇率波动','外汇远期合约'])
     #add these keywords into the dictionary
     for addword in keywords:
         jieba.add_word(addword, freq=None, tag=None)
@@ -262,13 +267,6 @@ def calScore(f,res,filetxt,resScore):
     print(Counter(wordList))
     print(FX_Score)
 
-    #    all_lines = all_lines + line
-    #tags = jieba.analyse.extract_tags(all_lines, topK=100)
-    #print(tags)
- 
-    #words = jieba.tokenize(unicode(f, 'utf-8'))
-    #for tk in words:
-    #    print(tk)
     return resScore
 def main():
 
@@ -290,9 +288,7 @@ def main():
     #use current profile
     #about:support
     #under application basic: show folders
-    profile = webdriver.firefox.firefox_profile.FirefoxProfile(FIREFOXPROFILE)
-    profile.set_preference('browser.download.dir', pathname)
-    driver = webdriver.Firefox(profile)
+    driver = createDriver("Firefox-Standalone")
     link = 'http://www.sse.com.cn/disclosure/listedinfo/regular/'
     stockcodes = '.\StockCodes_SH.txt'
     for stockcode in open(stockcodes, "r",encoding = 'utf-8'):
@@ -302,20 +298,23 @@ def main():
     print('Now converting the pdf into text and immediately mine it')
     #use subprocess to convert the file into text    
     PDFpath = os.path.dirname(os.path.realpath(__file__))+'\\PDF_SH\\'
+    if not os.path.exists(PDFpath): #make sure the subdirectory exists else create one
+        os.makedirs(PDFpath)        
     for file in os.listdir(PDFpath):
         if file.endswith(".pdf"):
             
             #os.chdir(PDFpath)
             print(os.getcwd())
-            
-            subprocess.check_output([".\\Xpdf\\pdftotext.exe","-table","-enc","UTF-8",PDFpath+file],shell=True,stderr=subprocess.STDOUT)
-            
-            filetxt = os.path.splitext(file)[0]
-            txtPath = PDFpath + filetxt+'.txt'
-            #output the score
-            f =  open(txtPath, "r",encoding = 'utf-8')
-            resScore=calScore(f,res,filetxt,resScore)
-
+            if os.path.exists(".\\Xpdf\\pdftotext.exe"):
+                subprocess.check_output([".\\Xpdf\\pdftotext.exe","-table","-enc","UTF-8",PDFpath+file],shell=True,stderr=subprocess.STDOUT)
+                
+                filetxt = os.path.splitext(file)[0]
+                txtPath = PDFpath + filetxt+'.txt'
+                #output the score
+                f =  open(txtPath, "r",encoding = 'utf-8')
+                resScore=calScore(f,res,filetxt,resScore)
+            else:
+                print('no pdf converter @ .\\Xpdf\\pdftotext.exe')
     #renameFiles(PDFpath)
     resScore.to_csv("scrapResultScore_SH.txt",encoding = 'utf-8')
     res_M=res.merge(resScore,how='inner',on='filename')

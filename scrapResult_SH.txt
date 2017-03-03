@@ -1,0 +1,18 @@
+	KeywordSet	fileDescription	filename	fxScore	link	stockcode
+0				0.0		
+1		600733:S前锋2016年半年度报告	600733_2016_z.pdf		/disclosure/listedinfo/announcement/c/2016-08-31/600733_2016_z.pdf	"600733
+"
+2		600733:S前锋2016年半年度报告摘要	600733_2016_zzy.pdf		/disclosure/listedinfo/announcement/c/2016-08-31/600733_2016_zzy.pdf	"600733
+"
+3		600734:实达集团2016年半年度报告摘要	600734_2016_zzy.pdf		/disclosure/listedinfo/announcement/c/2016-08-31/600734_2016_zzy.pdf	"600734
+"
+4		600734:实达集团2016年半年度报告	600734_2016_z.pdf		/disclosure/listedinfo/announcement/c/2016-08-31/600734_2016_z.pdf	"600734
+"
+5		600734:实达集团2015年年度报告	600734_2015_n.pdf		/disclosure/listedinfo/announcement/c/2016-04-29/600734_2015_n.pdf	"600734
+"
+6		600734:实达集团2015年年度报告摘要	600734_2015_nzy.pdf		/disclosure/listedinfo/announcement/c/2016-04-29/600734_2015_nzy.pdf	"600734
+"
+7		600735:新华锦2016年半年度报告摘要	600735_2016_zzy.pdf		/disclosure/listedinfo/announcement/c/2016-08-31/600735_2016_zzy.pdf	"600735
+"
+8		600735:新华锦2016年半年度报告	600735_2016_z.pdf		/disclosure/listedinfo/announcement/c/2016-08-31/600735_2016_z.pdf	"600735
+"

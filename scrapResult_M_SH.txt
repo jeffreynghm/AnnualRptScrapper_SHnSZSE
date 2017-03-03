@@ -1,0 +1,2 @@
+	KeywordSet_x	fileDescription_x	filename	fxScore_x	link_x	stockcode_x	KeywordSet_y	fileDescription_y	fxScore_y	link_y	stockcode_y
+0				0.0					0		

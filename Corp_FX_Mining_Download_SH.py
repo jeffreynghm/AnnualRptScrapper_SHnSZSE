@@ -22,13 +22,11 @@ import socket #catch gaddrinfo error
 import datetime # convert to date for comparsion
 
 FIREFOXPROFILE = "C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default"
-myip = "192.168.3.1"
 
 def createDriver(browser):
     
     #port:8080
     #java.exe -jar selenium-server-standalone-2.53.1.jar -host="192.168.3.17" -port="8080"
-    #myip = "http://127.0.0.1"
 
     if browser =="IE-Server":
         desired_capabilities = webdriver.DesiredCapabilities.INTERNETEXPLORER.copy()

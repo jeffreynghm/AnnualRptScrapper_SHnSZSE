@@ -11,6 +11,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 import re
 
 import pandas as pd
@@ -19,8 +20,8 @@ import urllib.request #download the file before proceeding
 import socket #catch gaddrinfo error
 
 
-FIREFOXPROFILE = "C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default"     
-def scrapReports(link,stockcode,driver,res):
+     
+def scrapReports_SZSE(link,stockcode,driver,res):
     #make sure the download function works
 
     #change pdf default behavior on firefox to be download about:preferences#applications
@@ -30,9 +31,10 @@ def scrapReports(link,stockcode,driver,res):
     except Exception:
         print('cannot load the page '+stockcode)
     
-    driver.implicitly_wait(5) # seconds
+    #driver.implicitly_wait(5) # seconds
    
     element = driver.find_element_by_name("stockCode")
+    element.send_keys(Keys.CONTROL+ "a")
     element.send_keys(stockcode)
 
     try:
@@ -42,10 +44,10 @@ def scrapReports(link,stockcode,driver,res):
 
     element = driver.find_element_by_name("startTime")
     element.clear()
-    element.send_keys("2015-09-22")
+    element.send_keys("2016-04-01")
     element = driver.find_element_by_name("endTime")
     element.clear()
-    element.send_keys("2016-09-22")
+    element.send_keys("2017-07-21")
     
     driver.find_element_by_xpath("//input[@src='images2008/button_qd.gif']").click()
 
@@ -86,7 +88,7 @@ def calScore(f,res,filetxt,resScore):
     wordList = ['']
     FX_Score = 0
     
-    keywords = set(['外汇'])
+    keywords = set(['外汇损益','掉期','海外市场','外汇波动','外汇市场汇率波动','外汇远期合约'])
     #add these keywords into the dictionary
     for addword in keywords:
         jieba.add_word(addword, freq=None, tag=None)
@@ -124,52 +126,30 @@ def main():
         'fileDescription':'',
         'link':'',
         'fxScore':0,
-        'KeywordSet':'',
-        'set':['']
+        'KeywordSet':['']
         }
 
     res = pd.DataFrame(data)
     resScore = pd.DataFrame(data)
-    outputfileName = "scrapResult_SZ.txt"
+    
     #use a spider to crawl the annual reports of the companies
     #use current profile
     #about:support
     #under application basic: show folders
-    #originalDLPath = 'C:\\Users\\Jeffrey Ng\\Downloads'
-    profile = webdriver.firefox.firefox_profile.FirefoxProfile(FIREFOXPROFILE)
-    profile.set_preference('browser.download.dir', pathname)
-    driver = webdriver.Firefox(profile)
-    driver.set_page_load_timeout(30)
-    link = 'http://disclosure.szse.cn/m/search0425.jsp'
-    stockcodes = '.\StockCodes.txt'
-    for stockcode in open(stockcodes, "r",encoding = 'utf-8'):
-        res=scrapReports(link,stockcode,driver,res)
-    res.to_csv(outputfileName,encoding = 'utf-8',sep='\t')
     
-    print('Now converting the pdf into text and immediately mine it')
-    #use subprocess to convert the file into text    
-    PDFpath = os.path.dirname(os.path.realpath(__file__))+'\\PDF\\'
-    for file in os.listdir(PDFpath):
-        if file.endswith(".PDF"):
-            
-            #os.chdir(PDFpath)
-            print(os.getcwd())
-            
-            try:
-                subprocess.check_output([".\\Xpdf\\pdftotext.exe","-table","-enc","UTF-8",PDFpath+file],shell=True,stderr=subprocess.STDOUT)
-            except Exception:
-                continue
-            
-            filetxt = os.path.splitext(file)[0]
-            txtPath = PDFpath + filetxt+'.txt'
-            #output the score
-            f =  open(txtPath, "r",encoding = 'utf-8')
-            resScore=calScore(f,res,filetxt,resScore)
-
-    #renameFiles(PDFpath)
-    resScore.to_csv("scrapResultScore.txt",encoding = 'utf-8')
+    profile = webdriver.firefox.firefox_profile.FirefoxProfile('C:\\Users\\Jeffrey Ng\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\urnj58kz.default')
+    profile.set_preference('browser.download.dir', pathname)
+    #gecko driver can be downloaded from github and place in any place, as long as it is specified below
+    driver = webdriver.Firefox(profile,executable_path='C:\\Jeffrey Ng\\gecko\\geckodriver.exe')
+    link = 'http://disclosure.szse.cn/m/search0425.jsp'
+    stockcodes = '.\StockCodes_SZ.txt'
+    for stockcode in open(stockcodes, "r",encoding = 'utf-8'):
+        res=scrapReports_SZSE(link,stockcode,driver,res)
+    res=scrapReports_SHSE(link,stockcode,driver,res)
+    res.to_csv("scrapResult_SZ.txt",encoding = 'utf-8',sep='\t')
+    resScore.to_csv("scrapResultScore_SZ.txt",encoding = 'utf-8')
     res_M=res.merge(resScore,how='inner',on='filename')
-    res_M.to_csv("scrapResult_M.txt",encoding = 'utf-8',sep='\t')
+    res_M.to_csv("scrapResult_M_SZ.txt",encoding = 'utf-8',sep='\t')
 
 if __name__ == '__main__':
   main()
